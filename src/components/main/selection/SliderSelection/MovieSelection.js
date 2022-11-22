@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import { Button } from "../../../../utils/Button";
-import { movieData } from "./MovieData";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+
 function MovieSelection() {
     var settings = {
         dots: true,
@@ -37,15 +40,31 @@ function MovieSelection() {
           }
         ]
       };
+
+      const [data, setData] = useState([]);
+      const getAllData = () => {
+        axios
+          .get("http://localhost:8080/test/movies")
+          .then((response) => {
+            console.log(response.data);
+            setData(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+      useEffect(() => {
+        getAllData();
+      }, []);
   return (
     <Slider {...settings}>
-        {movieData.map((item) =>(
+        {data.map((item) =>(
             <div className="card">
                 <div className="card-top">
                     <img src={item.image} alt="" />
                 </div>
                 <div className="card-bottom">
-                    <h2>{item.desc}</h2>
+                    <h2>{item.name}</h2>
                     <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium">Buy Ticket</Button>
                     <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium">Details</Button>
                 </div>

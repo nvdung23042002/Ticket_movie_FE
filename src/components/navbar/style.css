@@ -5,10 +5,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: red;
+    color: rgb(24, 22, 22);
     font-size: 40px;
 }
-
+.logo:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
+}
 .container-navbar {
     display: flex;
     justify-content: space-between;
@@ -33,7 +37,7 @@ body {
 }
 
 .nav-link a:hover {
-    color: orangered;
+    color: rgb(28, 26, 26);
 
 }
 /*nav mobile*/
@@ -47,13 +51,12 @@ body {
     .nav-link {
         display: none;
         border: 2px solid white;
-        /* z-index: 111; */
+        z-index: 111;
     }
     .container-navbar .menu-icons {
         display: block;
     }
-    .container-navbar #nav-link-mobile , 
-    .container-navbar #nav-link-mobile-hide {
+    .container-navbar #nav-link-mobile{
         display: block;
         position: absolute;
         left: 0;
@@ -62,6 +65,11 @@ body {
         background: #ddcecedc;
         padding-bottom: 5px;
         transition: all 0.3s;
+        overflow: hidden;
+    }
+    .container-navbar #nav-link-mobile-hide {
+        display: none;
+        
     }
     @keyframes slide-in {
         0% {

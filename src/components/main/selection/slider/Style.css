@@ -20,6 +20,8 @@ body {
     overflow: hidden;
     height: 400px;
     color: #fff;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .card-top h1 {
@@ -32,8 +34,12 @@ body {
 }
 .card-top > img {
     width: 100%;
-    max-height: 280px;
+    max-height: 250px;
     object-fit: cover;
 }
 
-
+.card:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
+}

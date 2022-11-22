@@ -1,5 +1,4 @@
 import React from "react";
-import './style.css'
 import {
   Box,
   Container,
@@ -20,23 +19,22 @@ const Footer = () => {
         <Row>
           <Column>
             <Heading>About Us</Heading>
-            <FooterLink href="#">Aim</FooterLink>
-            <FooterLink href="#">Vision</FooterLink>
-            <FooterLink href="#">Testimonials</FooterLink>
+            <FooterLink href="https://www.facebook.com/dung.nguyenvinh.2304">Group 10</FooterLink>
+            <FooterLink href="#">Project Web Application Development course</FooterLink>
+            <FooterLink href="#">UET- 144 Xuan Thuy, Cau Giay, Ha Noi</FooterLink>
           </Column>
           <Column>
             <Heading>Services</Heading>
-            <FooterLink href="#">Writing</FooterLink>
-            <FooterLink href="#">Internships</FooterLink>
-            <FooterLink href="#">Coding</FooterLink>
-            <FooterLink href="#">Teaching</FooterLink>
+            <FooterLink href="#">Payment</FooterLink>
+            <FooterLink href="#">Momo</FooterLink>
+            <FooterLink href="#">Visa</FooterLink>
+            <FooterLink href="#">Napas</FooterLink>
           </Column>
           <Column>
             <Heading>Contact Us</Heading>
-            <FooterLink href="#">Uttar Pradesh</FooterLink>
-            <FooterLink href="#">Ahemdabad</FooterLink>
-            <FooterLink href="#">Indore</FooterLink>
-            <FooterLink href="#">Mumbai</FooterLink>
+            <FooterLink href="#">Email: abc123@vnu.edu.vn</FooterLink>
+            <FooterLink href="#">0972654853</FooterLink>
+            <FooterLink href="#">Fax: 88888888</FooterLink>
           </Column>
           <Column>
             <Heading>Social Media</Heading>
