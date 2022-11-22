@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import { Button } from "../../../../utils/Button";
+import { Button } from "../../utils/Button";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";

@@ -4,12 +4,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import "./Style.css"
-import { Button } from '../../../../utils/Button';
+import { Button } from '../../utils/Button';
 import { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
-import MyContext from '../../../../utils/ShareState/Context';
-import MovieDetails from '../movies/MovieDetails';
+import MyContext from '../../utils/ShareState/Context';
 import { Modal } from 'bootstrap';
 
 function HeroList() {
