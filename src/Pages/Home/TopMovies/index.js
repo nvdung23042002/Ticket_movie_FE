@@ -1,15 +1,15 @@
 import React from 'react'
-// import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import "./Style.css"
-import { Button } from '../../utils/Button';
+import { Button } from '../../../Utils/Button/Button';
 import { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
-import MyContext from '../../utils/ShareState/Context';
-import { Modal } from 'bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { createContext } from 'react';
+
 
 function HeroList() {
     var settings = {
@@ -64,16 +64,12 @@ function HeroList() {
       useEffect(() => {
         getAllData();
       }, []);
+      const navigate = useNavigate();
       
-      const [show, setShow] = useState(false)
 
-      const handleClick = () => {
-        setShow(true)
-      }
-
+      
   return (
     <>
-      <MyContext.Provider value={{data, setData}}>
         <Slider {...settings}>
             {data.map((item) =>(
                 <div className="card">
@@ -84,12 +80,11 @@ function HeroList() {
                         <h2>{item.name}</h2>
                         <Button type="button" buttonStyle="btn--primary--outline" buttonSize="btn--medium">Buy Ticket</Button>
                         <Button type="button" buttonStyle="btn--primary--outline" buttonSize="btn--medium"
-                         >Details</Button>
+                         onClick={() => navigate("movie-details", {state: item})}>Details</Button>
                     </div>
                 </div>
             ))}
-        </Slider>  
-      </MyContext.Provider>
+        </Slider>
     </>
   )
 }

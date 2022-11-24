@@ -1,9 +1,9 @@
-import Home from "./Home";
-import Booking from "./Booking";
+import Home from "./Pages/Home";
+import Booking from "./Pages/Booking";
 import Layout from "./Layout";
-import Payment from "./Payment"
-import MovieDetails from "./MovieDetails";
-import Ticket from "./Ticket";
+import Payment from "./Pages/Payment"
+import MovieDetails from "./Pages/MovieDetails";
+import Ticket from "./Pages/Ticket";
 
 const routes = [
     {

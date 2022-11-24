@@ -1,5 +1,5 @@
 import "./style.css";
-import routes from "../routes.config.js";
+import routes from "../../routes.config.js";
 import { Link } from "react-router-dom";
 import {RiCloseLine} from 'react-icons/ri'
 import {AiOutlineBars} from 'react-icons/ai'

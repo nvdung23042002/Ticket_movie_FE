@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import { Button } from "../../utils/Button";
+import { Button } from "../../../Utils/Button/Button";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function MovieSelection() {
     var settings = {
@@ -56,6 +57,7 @@ function MovieSelection() {
       useEffect(() => {
         getAllData();
       }, []);
+      const navigate = useNavigate()
   return (
     <Slider {...settings}>
         {data.map((item) =>(
@@ -66,7 +68,8 @@ function MovieSelection() {
                 <div className="card-bottom">
                     <h2>{item.name}</h2>
                     <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium">Buy Ticket</Button>
-                    <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium">Details</Button>
+                    <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium"
+                    onClick={() => navigate("movie-details", {state: item})}>Details</Button>
                 </div>
             </div>
         ))}
