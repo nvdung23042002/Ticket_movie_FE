@@ -1,0 +1,82 @@
+
+.booking-wrapper .line{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 2px solid rgb(249, 249, 249);
+}
+
+.booking-wrapper .list-display{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+
+.cinema-wrapper .cinema-detail{
+    padding: 5px;
+}
+
+.cinema-detail .name{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.category-view-wrapper{
+    margin-top: 10px;
+}
+
+.category-view-wrapper .category-view{
+    font-size: 18px;
+}
+
+
+
+.category-view-wrapper .time-wrapper .time-detail{
+    font-size: 17px;
+    border: 2px solid rgba(0, 0, 0, 0.35);
+    min-width: 100px; 
+    padding: 5px 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    margin-right: 5px;
+    margin-top: 5px;
+
+}
+
+.booking-wrapper .location-wrapper .location{
+    background-color: rgb(17, 17, 17);
+    min-width: 100px; 
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px 3px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.booking-wrapper .category-view-wrapper .category{
+    background-color: rgb(17, 17, 17);
+    min-width: 100px; 
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.date-item-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 70px;
+    align-items: center;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 3px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
