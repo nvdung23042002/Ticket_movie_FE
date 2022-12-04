@@ -68,6 +68,11 @@
     margin-top: 5px;
     margin-right: 5px;
 }
+.date-item-wrapper :hover {
+    cursor: default;
+    transform: scale(1.2);
+}
+
 
 .date-item-wrapper{
     display: flex;

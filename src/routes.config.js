@@ -5,6 +5,9 @@ import Payment from "./Pages/Payment"
 import MovieDetails from "./Pages/MovieDetails";
 import Ticket from "./Pages/Ticket";
 import Seat from "./Pages/Booking/Seat"
+import Login from "./Pages/Login";
+import Authentication from "./guards/Authen";
+import Signup from "./Pages/signup";
 
 const routes = [
   {
@@ -14,7 +17,7 @@ const routes = [
   },
   {
     path: "/booking",
-    element: <Layout component={Booking} />,
+    element: <Authentication><Layout component={Booking} /></Authentication>,
     label: "Booking"
   },
   {
@@ -23,8 +26,13 @@ const routes = [
   },
   {
     path: "/login",
-    element: <div>Login</div>,
+    element: <Login />,
     label: "Login"
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+    label: "Signup"
   },
   {
     path: "/movie-details",
