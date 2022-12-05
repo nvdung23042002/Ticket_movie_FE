@@ -69,7 +69,7 @@
     background: rgba(0,0,0,0.1);
     padding: 5px 10px;
     border-radius: 5px;
-    color: #777;
+    /* color: #777; */
   }
   
   .showcase li {
@@ -147,7 +147,7 @@
   }
   
   #booking .seat-status {
-    color: #777;
+    /* color: #777; */
     background: rgba(0, 0, 0, 0.25);
     padding: 5px 10px;
     border-radius: 8px;

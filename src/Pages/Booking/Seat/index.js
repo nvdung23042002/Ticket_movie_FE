@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css"
 import data from "./data";
+import { Button } from "bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 const price = 170000;
 const SeatItem = ({ seatDetail, seatSearch, setSeatSearch }) => {
     return (
         <button className="seat"
             style={{
-                backgroundColor: (seatDetail == seatSearch) ? "#0081cb" : "#444451",
+                backgroundColor: (seatSearch.includes(seatDetail.seatId)) ? "#0081cb" : "#444451",
                 height: "12px",
                 width: "15px",
                 margin: "3px",
@@ -17,7 +19,10 @@ const SeatItem = ({ seatDetail, seatSearch, setSeatSearch }) => {
             }}
             onClick={
                 e => {
-                    setSeatSearch(seatDetail)
+                    // setSeatSearch(seatDetail)
+                    console.log(seatDetail.seatId)
+                    setSeatSearch(prevState => [...prevState, seatDetail.seatId])
+                    console.log(seatSearch)
                 }
             }
         >
@@ -27,7 +32,7 @@ const SeatItem = ({ seatDetail, seatSearch, setSeatSearch }) => {
 }
 
 const Seat = () => {
-    const [seatSearch, setSeatSearch] = useState("")
+    const [seatSearch, setSeatSearch] = useState([])
     return (
 
         <div className="booking-wrapper grid wide">
@@ -138,7 +143,7 @@ const Seat = () => {
                     </div>
                 </div>
                 <div className="booking-ticket-infos col l-6 m-6 c-12">
-                    <h1>Doctor</h1>
+                    <h1>Doctor Strange: In The Multiverse Of Madness</h1>
                 </div>
             </div>
         </div>

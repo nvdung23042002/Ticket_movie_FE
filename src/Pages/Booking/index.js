@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./style.css";
 import data from "./data";
+import { Button } from "bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 const DateItem = ({ dateDetail, dateSearch, setDateSearch }) => {
@@ -9,7 +11,7 @@ const DateItem = ({ dateDetail, dateSearch, setDateSearch }) => {
     <button className="date-item-wrapper"
       style={{
         border: (dateDetail.day == dateSearch) ? "2px solid rgb(0, 0, 0)" : "2px solid rgb(249, 249, 249)",
-        backgroundColor: "transparent"
+        backgroundColor: (dateDetail.day == dateSearch) ? "#B5AFAF" : "transparent",
       }}
       onClick={e => { setDateSearch(dateDetail.day) }}
     >
