@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import './login.css'
 import { useNavigate } from 'react-router-dom';
-
+ 
 const Login = () => {
     const navigate = useNavigate()
     const methods = useForm({
@@ -12,17 +12,17 @@ const Login = () => {
             password: ""
         }
     });
-
+ 
     const {
         handleSubmit,
         register,
         formState: { errors }
     } = methods;
-
+ 
     const onSubmit = (values) => {
         handleLogin(values);
     };
-
+ 
     const handleLogin = async (loginData) => {
         try {
             const { data } = await axios.post("url login", loginData);
@@ -30,7 +30,7 @@ const Login = () => {
             console.log(error);
         }
     };
-
+ 
     return (
         <div div className="container" >
             <div className="c1">
@@ -87,12 +87,13 @@ const Login = () => {
                     />
                     {errors?.password && <p className='error'>{errors.password.message}</p>}
                     <button className="btn" type='submit'>Sign In</button>
-
+ 
                     <br /><br /><br /><br />
                 </form>
             </div>
         </div>
     );
 }
-
+ 
 export default Login
+
