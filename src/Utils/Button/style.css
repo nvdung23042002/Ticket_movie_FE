@@ -71,13 +71,25 @@
   
   /* --------- Button Sizes ------------ */
   
+  .btn--small {
+    padding: 10px 20px;
+    font-size: 10px;
+    margin-left: 6px;
+    margin-right: 2px;
+    margin-bottom: 10px;
+  }
+
   .btn--medium {
     padding: 10px 20px;
     font-size: 13px;
+    margin-left: 8px;
+    margin-right: 2px;
   }
   
   .btn--large {
     padding: 15px 30px;
     font-size: 16px;
+    margin-left: 8px;
+    margin-right: 2px;
   }
   

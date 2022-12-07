@@ -48,7 +48,7 @@ export default function () {
                 </li>
                 <li className="movie-details-info">
                   <label>Rated:</label>
-                  <span>C13 - PHIM CẤM KHÁN GIẢ DƯỚI 13 TUỔI</span>
+                  <span>{location.state.rated}</span>
                 </li>
                 <li className="movie-details-info">
                   <label>Rating:</label>

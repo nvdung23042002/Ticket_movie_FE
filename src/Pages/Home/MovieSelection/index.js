@@ -47,7 +47,6 @@ function MovieSelection() {
         axios
           .get("http://localhost:8080/test/movies")
           .then((response) => {
-            console.log(response.data);
             setData(response.data);
           })
           .catch((error) => {

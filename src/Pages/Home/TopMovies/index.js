@@ -54,7 +54,6 @@ function HeroList() {
         axios
           .get("http://localhost:8080/test/movies/toprating")
           .then((response) => {
-            console.log(response.data);
             setData(response.data);
           })
           .catch((error) => {
@@ -64,6 +63,7 @@ function HeroList() {
       useEffect(() => {
         getAllData();
       }, []);
+       
       const navigate = useNavigate();
       
 

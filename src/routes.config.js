@@ -9,6 +9,8 @@ import Login from "./Pages/Login";
 import Authentication from "./guards/Authen";
 import Signup from "./Pages/signup";
 
+import Admin from "./Pages/Admin";
+import AddFilm from "./Pages/Admin/FilmManagement/AddFilm"
 const routes = [
   {
     path: "/",
@@ -45,6 +47,18 @@ const routes = [
   {
     path: "/booking/seat",
     element: <Layout component={Seat} />
+  },
+  {
+    path: "/admin",
+    element: <Layout component={Admin} />
+  },
+  {
+    path: "/admin/add-film",
+    element: <Layout component={AddFilm} />
+  },
+  {
+    path: "/admin/edit-film/:id",
+    element: <Layout component={AddFilm} />
   }
 ];
 export default routes;
