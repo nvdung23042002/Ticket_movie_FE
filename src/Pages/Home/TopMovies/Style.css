@@ -15,7 +15,7 @@ body {
 }
 .card {
     border: 1px solid #fff;
-    background: rgb(19, 19, 19);
+    background: #363638;
     border-radius: 8px;
     overflow: hidden;
     height: 400px;

@@ -43,7 +43,7 @@ export default function({closeModal}) {
                                         <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
                                         onClick={() => {
                                                 setShowModal(true) 
-                                                navigate({state:item})
+                                                navigate("",{state:item})
                                             }
                                         }>Add Show</Button>
                                     </td>

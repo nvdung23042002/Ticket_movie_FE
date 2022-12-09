@@ -14,24 +14,20 @@ export default function ({ closeModal }) {
     const [category, setCategory] = useState('')
     const [price, setPrice] = useState('')
     const location = useLocation();
-
-    // const getCinemaID = () => {
-    //     setCinemaID(location.state.id)
-    //     console.log(cinemaID)
-    // }
+    //
     const saveShow = (e) => {
+        setCinemaID(location.state.id)
         e.preventDefault();
-
         const showInfo = { cinemaID, roomId, movieID, showDay, showMonth, showTime, category, price }
         TicketServices.addShow(showInfo).then((res) => {
             alert("Add show success")
+            closeModal(false)
         }).catch(error => {
             console.log(error);
         })
     }
     return (
         <div className="modal-background ">
-
             <div className="modal-container">
                 <ImCancelCircle className="btn-close"
                     onClick={() => closeModal(false)} />
@@ -119,7 +115,7 @@ export default function ({ closeModal }) {
                 </div>
                 <div className="footer">
                     <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
-                    onClick={ ()=> {saveShow(); closeModal(false)} }>Save</Button>
+                        onClick={(e) => saveShow(e)}>Save</Button>
                     <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
                         onClick={() => closeModal(false)}>Cancel</Button>
                 </div>
