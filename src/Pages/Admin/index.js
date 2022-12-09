@@ -1,6 +1,7 @@
 import "./style.css"
 import UserManagement from "./UserManagement";
 import FilmManagement from "./FilmManagement";
+import RoomManagement from "./RoomManagement";
 import { useState } from "react";
 import { Button } from "../../Utils/Button/Button";
 
@@ -19,6 +20,9 @@ export default function () {
           </div>
           <div className="film">
             <FilmManagement></FilmManagement>
+          </div>
+          <div className="room">
+            <RoomManagement></RoomManagement>
           </div>
       </div>
     </div>

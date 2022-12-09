@@ -1,6 +1,7 @@
 .Navbar .menu-item {
-    margin: 10px;
+  margin: 10px;
 }
+
 .logo {
   display: flex;
   justify-content: center;
@@ -8,28 +9,32 @@
   color: rgb(24, 22, 22);
   font-size: 40px;
 }
+
 .logo:hover {
-  -ms-transform: scale(1.2); /* IE 9 */
-  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
+
 .Navbar {
   display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 4rem;
-    background-color: rgb(229, 186, 186)
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  background-color: rgb(228, 178, 178)
 }
 
 .nav-link {
   display: flex;
 }
+
 .nav-link .menu-item {
   font-size: 1.6rem;
   font-weight: 300;
   text-decoration: none;
   margin-right: 1rem;
 }
+
 .nav-link .menu-item:hover {
-  color: rgb(28, 26, 26);
+  color: rgb(15, 14, 14);
 }

@@ -58,8 +58,6 @@ export default function () {
                                             onClick={(e) => deleteFilm(item.id)}>Delete</Button>
                                             <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
                                             onClick={() => navigate('/admin/edit-film/${item.id}', {state: item})}>Edit</Button>
-                                            <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
-                                            >Add Ticket</Button>
                                         </td>
                                     </tr>
                             )

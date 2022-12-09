@@ -1,21 +1,22 @@
+/* 
 body {
   background: #faf3ec;
   font-family: "Roboto";
 }
 ::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
+  
   color: #748194;
 }
 ::-moz-placeholder {
-  /* Firefox 19+ */
+  
   color: #748194;
 }
 :-ms-input-placeholder {
-  /* IE 10+ */
+ 
   color: #748194;
 }
 :-moz-placeholder {
-  /* Firefox 18- */
+  
   color: #748194;
 }
 .auth-page .container {
@@ -174,3 +175,4 @@ a {
 .s2class {
   color: #748194;
 }
+ */
