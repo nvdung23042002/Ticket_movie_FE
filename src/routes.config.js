@@ -8,33 +8,20 @@ import Seat from "./Pages/Booking/Seat"
 import Login from "./Pages/Login";
 import Authentication from "./guards/Authen";
 import Signup from "./Pages/signup";
-
 import Admin from "./Pages/Admin";
 import AddFilm from "./Pages/Admin/FilmManagement/AddFilm"
 const routes = [
   {
-    path: "/",
-    element: <Layout component={Home} />,
-    label: "Home"
-  },
-  {
     path: "/booking",
     element: <Authentication><Layout component={Booking} /></Authentication>,
-    label: "Booking"
   },
   {
     path: "/payment",
     element: <Layout component={Payment} />,
   },
   {
-    path: "/login",
-    element: <Login />,
-    label: "Login"
-  },
-  {
     path: "/signup",
     element: <Signup />,
-    label: "Signup"
   },
   {
     path: "/movie-details",
@@ -59,6 +46,17 @@ const routes = [
   {
     path: "/admin/edit-film/:id",
     element: <Layout component={AddFilm} />
+  },
+  {
+    path: "/",
+    element: <Layout component={Home} />,
+    label: "Home"
+  },
+  {
+    path: "/login",
+    element: <Login />,
+    label: "Login"
   }
+    
 ];
 export default routes;

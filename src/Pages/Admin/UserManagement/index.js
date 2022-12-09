@@ -35,11 +35,11 @@ export default function () {
 
                     <thead>
                         <tr>
-                            <th>name</th>
-                            <th>sex</th>
-                            <th>email</th>
-                            <th>phone</th>
-                            <th>addres</th>
+                            <th>Full name</th>
+                            <th>Birthday</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -49,10 +49,10 @@ export default function () {
                             users.map(
                                 item => 
                                 <tr key={item.id}>
-                                    <td>{item.name}</td>
-                                    <td>{item.sex}</td>
+                                    <td>{item.fullName}</td>
+                                    <td>{item.birthDay}</td>
                                     <td>{item.email}</td>
-                                    <td>{item.mobile}</td>
+                                    <td>{item.phoneNumber}</td>
                                     <td>{item.address}</td>
                                     <td>
                                         <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
