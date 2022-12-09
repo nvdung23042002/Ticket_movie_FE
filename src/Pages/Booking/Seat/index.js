@@ -4,6 +4,7 @@ import "./style.css"
 import data from "./data";
 import { Button } from "bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useLocation } from "react-router-dom";
 const price = 170000;
 const SeatItem = ({ seatDetail, seatSearch, setSeatSearch }) => {
     return (
@@ -32,7 +33,9 @@ const SeatItem = ({ seatDetail, seatSearch, setSeatSearch }) => {
 }
 
 const Seat = () => {
+    const location = useLocation()
     const [seatSearch, setSeatSearch] = useState([])
+
     return (
 
         <div className="booking-wrapper grid wide">
@@ -143,7 +146,15 @@ const Seat = () => {
                     </div>
                 </div>
                 <div className="booking-ticket-infos col l-6 m-6 c-12">
-                    <h1>Doctor Strange: In The Multiverse Of Madness</h1>
+                    <h1 className="movie-name">Phù thủy tối thượng trong Đa Vũ trụ hỗn loạn</h1>
+                    <div className="time">Giờ: {location.state.time.showtime} </div>
+                    <div className="date">Ngày tháng: {location.state.day.day + "/" + location.state.day.month + "/" + "2022"} </div>
+                    <div className="theater">Rạp: {location.state.thea.thea}</div>
+                    <div className="ticket-code">Mã vé: {seatSearch + " "}</div>
+                    <div className="price-ticket">Giá vé: {price * seatSearch.length}</div>
+                    <button className="pay"> Pay </button>
+
+
                 </div>
             </div>
         </div>
