@@ -19,22 +19,22 @@ export default function () {
     const [rated, setRated] = useState('')
 
     const navigate = useNavigate()
-    const {id} = useParams()
+    const { id } = useParams()
     const location = useLocation()
 
 
     const saveOrEditFilm = (e) => {
         e.preventDefault();
-        const films = {name, image, rating, cast, director, description, trailerUrl, debut, language, time, rated}
-        if(id) {
+        const films = { name, image, rating, cast, director, description, trailerUrl, debut, language, time, rated }
+        if (id) {
             FilmServices.editFilm(location.state.id, films).then((res) => {
                 navigate('/admin')
                 // console.log(id)
-            }).catch(error =>{
+            }).catch(error => {
                 console.log(error);
-            }) 
-            
-        }else {
+            })
+
+        } else {
             FilmServices.addFilm(films).then((res) => {
                 navigate('/admin')
                 // console.log(id)
@@ -43,10 +43,10 @@ export default function () {
             })
         }
     }
-    
+
     useEffect(() => {
-        if(id){
-            FilmServices.getFilmByID(location.state.id).then((res)=>{
+        if (id) {
+            FilmServices.getFilmByID(location.state.id).then((res) => {
                 setName(res.data.name)
                 setImage(res.data.image)
                 setRating(res.data.rating)
@@ -58,134 +58,135 @@ export default function () {
                 setLanguage(res.data.language)
                 setTime(res.data.movieDuration)
                 setRated(res.data.rated)
-            }).catch(error =>{
+            }).catch(error => {
                 console.log(error);
             })
         }
     }, [])
 
-    const title = () =>{
-        if(id) {
+    const title = () => {
+        if (id) {
             return <h1 className="text-center">Update Film</h1>
-        } else{
+        } else {
             return <h1 className="text-center">Add Film</h1>
         }
     }
 
     return (
-        
-        <div className="container">
-            {
-                title()
-            }
+        <div className="add-film-page">
+            <div className="container">
+                {
+                    title()
+                }
                 <form>
                     <label className='left'>Name: </label>
-                    <input 
+                    <input
                         type="text"
                         placeholder='Enter name film'
                         name='name'
                         className='form-control'
                         value={name}
-                        onChange = {(e) => setName(e.target.value)}
+                        onChange={(e) => setName(e.target.value)}
                     />
                     <label className='left'>Image: </label>
-                    <input 
+                    <input
                         type="text"
                         placeholder='Enter image'
                         name='image'
                         className='form-control'
                         value={image}
-                        onChange = {(e) => setImage(e.target.value)}
+                        onChange={(e) => setImage(e.target.value)}
                     />
                     <label className='left'>Rating: </label>
-                    <input 
+                    <input
                         type="text"
                         placeholder='Enter rating'
                         name='rating'
                         className='form-control'
                         value={rating}
-                        onChange = {(e) => setRating(e.target.value)}
+                        onChange={(e) => setRating(e.target.value)}
                     />
                     <label className='left'>Cast: </label>
-                    <input 
+                    <input
                         type="text"
                         placeholder='Enter cast'
                         name='image'
                         className='form-control'
                         value={cast}
-                        onChange = {(e) => setCast(e.target.value)}
+                        onChange={(e) => setCast(e.target.value)}
                     />
                     <label className='left'>Director: </label>
-                    <input 
+                    <input
                         type="text"
                         placeholder='Enter director'
                         name='image'
                         className='form-control'
                         value={director}
-                        onChange = {(e) => setDirector(e.target.value)}
+                        onChange={(e) => setDirector(e.target.value)}
                     />
                     <label className='left'>Description: </label>
-                    <input 
+                    <input
                         type="text"
                         placeholder='Enter description'
                         name='image'
                         className='form-control'
                         value={description}
-                        onChange = {(e) => setDescription(e.target.value)}
+                        onChange={(e) => setDescription(e.target.value)}
                     />
                     <label className='left'>TrailerUrl: </label>
-                    <input 
+                    <input
                         type="text"
                         placeholder='Enter trailer url'
                         name='image'
                         className='form-control'
                         value={trailerUrl}
-                        onChange = {(e) => setTrailerUrl(e.target.value)}
+                        onChange={(e) => setTrailerUrl(e.target.value)}
                     />
                     <label className='left'>Debut: </label>
-                    <input 
+                    <input
                         type="text"
                         placeholder='Enter release day'
                         name='image'
                         className='form-control'
                         value={debut}
-                        onChange = {(e) => setDebut(e.target.value)}
+                        onChange={(e) => setDebut(e.target.value)}
                     />
                     <label className='left'>Language: </label>
-                    <input 
+                    <input
                         type="text"
                         placeholder='Enter language'
                         name='image'
                         className='form-control'
                         value={language}
-                        onChange = {(e) => setLanguage(e.target.value)}
+                        onChange={(e) => setLanguage(e.target.value)}
                     />
                     <label className='left'>Time: </label>
-                    <input 
+                    <input
                         type="text"
                         placeholder='Enter time'
                         name='image'
                         className='form-control'
                         value={time}
-                        onChange = {(e) => setTime(e.target.value)}
+                        onChange={(e) => setTime(e.target.value)}
                     />
                     <label className='left'>Rated: </label>
-                    <input 
+                    <input
                         type="text"
                         placeholder='Enter rated'
                         name='image'
                         className='form-control'
                         value={rated}
-                        onChange = {(e) => setRated(e.target.value)}
-                    /> 
+                        onChange={(e) => setRated(e.target.value)}
+                    />
 
                     <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium"
-                    onClick={(e) => saveOrEditFilm(e)}>Save</Button>
+                        onClick={(e) => saveOrEditFilm(e)}>Save</Button>
                     <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium"
-                    onClick={ (e)=> navigate('/admin')}>Cancel</Button>
+                        onClick={(e) => navigate('/admin')}>Cancel</Button>
                 </form>
 
 
+            </div>
         </div>
     )
 }
