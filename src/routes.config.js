@@ -19,7 +19,7 @@ const routes = [
   },
   {
     path: "/booking",
-    element: <Authentication><Layout component={Booking} /></Authentication>,
+    element: <Layout component={Booking} />,
     label: "Booking"
   },
   {
