@@ -19,7 +19,7 @@ body {
   
   color: #748194;
 }
-.container {
+.auth-page .container {
   position: absolute;
   width: auto;
   height: auto;

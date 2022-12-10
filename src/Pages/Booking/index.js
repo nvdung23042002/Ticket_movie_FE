@@ -2,16 +2,25 @@ import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./style.css";
 import data from "./data";
+import { Button } from "bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
+const day = [""]
+const time = [""]
+const thea = [""]
 
 const DateItem = ({ dateDetail, dateSearch, setDateSearch }) => {
   return (
     <button className="date-item-wrapper"
       style={{
-        border: (dateDetail.day == dateSearch) ? "2px solid rgb(0, 0, 0)" : "2px solid rgb(249, 249, 249)",
-        backgroundColor: "transparent"
+        border: (dateDetail == dateSearch) ? "2px solid rgb(0, 0, 0)" : "2px solid rgb(249, 249, 249)",
+        backgroundColor: (dateDetail == dateSearch) ? "#e9f5f9" : "transparent",
       }}
-      onClick={e => { setDateSearch(dateDetail.day) }}
+      onClick={e => {
+        setDateSearch(dateDetail)
+        day.push(dateDetail)
+        console.log(day)
+      }}
     >
       <div className="left-side">
         <div className="top">
@@ -19,7 +28,7 @@ const DateItem = ({ dateDetail, dateSearch, setDateSearch }) => {
 
         </div>
         <div className="bottom">
-          {dateDetail.date}
+          {/* {dateDetail.date} */}
         </div>
       </div>
       <div className="right-side">
@@ -39,7 +48,16 @@ const CinemaItem = ({ theaDetail }) => {
       return (
         <button className="time-detail"
           onClick={e => {
-            navigate("/booking/seat")
+            time.push(timeDetail)
+            thea.push(theaDetail)
+            navigate("/booking/seat", {
+              state: {
+                day: day[day.length - 1],
+                time: time[time.length - 1],
+                thea: thea[thea.length - 1],
+              }
+            })
+
           }}
         >
           {timeDetail.showtime}
@@ -71,7 +89,7 @@ const CinemaItem = ({ theaDetail }) => {
 }
 
 const Booking = () => {
-  const [dateSearch, setDateSearch] = useState(data.date[0].day)
+  const [dateSearch, setDateSearch] = useState(data.date[0])
   return (
 
     <div className="booking-wrapper">
