@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react"
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import "./style.css"
 import { Button } from "../../../../Utils/Button/Button"
 import { ImCancelCircle } from 'react-icons/im'
 import TicketServices from "../../../../services/TicketServices"
+import axios from "axios"
 export default function ({ closeModal }) {
-    const [cinemaID, setCinemaID] = useState('')
+    const location = useLocation();
+    const navigate = useNavigate()
+
+    const [cinemaID, setCinemaID] = useState((location.state.id))
     const [roomId, setRoomID] = useState('')
     const [movieID, setMovieID] = useState('')
     const [showDay, setShowDay] = useState('')
@@ -13,19 +17,27 @@ export default function ({ closeModal }) {
     const [showTime, setShowTime] = useState('')
     const [category, setCategory] = useState('')
     const [price, setPrice] = useState('')
-    const location = useLocation();
     //
+
     const saveShow = (e) => {
-        setCinemaID(location.state.id)
         e.preventDefault();
-        const showInfo = { cinemaID, roomId, movieID, showDay, showMonth, showTime, category, price }
-        TicketServices.addShow(showInfo).then((res) => {
-            alert("Add show success")
-            closeModal(false)
+        const shows = { cinemaID, roomId, movieID, showDay, showMonth, showTime, category, price }
+        TicketServices.addShow({
+            'cinemasId': cinemaID,
+            'roomId': roomId,
+            'movieId': movieID,
+            'showDate': showDay,
+            'showMonth': showMonth,
+            'showTime': showTime,
+            'category': category,
+            'price': price
+        }).then(response => {
+            console.log(response.data);
         }).catch(error => {
             console.log(error);
         })
     }
+
     return (
         <div className="modal-background ">
             <div className="modal-container">
@@ -103,7 +115,7 @@ export default function ({ closeModal }) {
 
                     <form>
                         <label className="left">Price:</label>
-                        <input type="number"
+                        <input type="text"
                             placeholder="Enter price for a ticket of movie show"
                             name="price"
                             className="form-control"
@@ -115,7 +127,10 @@ export default function ({ closeModal }) {
                 </div>
                 <div className="footer">
                     <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
-                        onClick={(e) => saveShow(e)}>Save</Button>
+                        onClick={(e) => {
+                            closeModal(false)
+                            saveShow(e)
+                        }}>Save</Button>
                     <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
                         onClick={() => closeModal(false)}>Cancel</Button>
                 </div>
