@@ -20,10 +20,7 @@ const SeatItem = ({ seatDetail, seatSold, seatSearch, setSeatSearch }) => {
             }}
             onClick={
                 e => {
-                    // setSeatSearch(seatDetail)
-                    // console.log(seatDetail.seatId)
                     setSeatSearch(prevState => [...prevState, seatDetail])
-                    // console.log(seatSearch)
                 }
             }
         >
