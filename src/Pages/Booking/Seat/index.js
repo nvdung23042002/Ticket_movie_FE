@@ -23,7 +23,6 @@ const SeatItem = ({ seatDetail, seatSold, seatSearch, setSeatSearch }) => {
                     // setSeatSearch(seatDetail)
                     // console.log(seatDetail.seatId)
                     setSeatSearch(prevState => [...prevState, seatDetail])
-
                     // console.log(seatSearch)
                 }
             }
@@ -32,15 +31,16 @@ const SeatItem = ({ seatDetail, seatSold, seatSearch, setSeatSearch }) => {
 
     )
 }
+const check = [5828, 5829]
 const price = 150000;
-const dataTicketId = [""]
-const dataTicketFilm = [""]
-const dataTicketPayment = [""]
-const dataUrl = [""]
+const dataTicketId = []
+const dataTicketFilm = []
+const dataTicketPayment = []
 const Seat = () => {
     const location = useLocation()
     const [seatSearch, setSeatSearch] = useState([])
     const [tickets, setTickets] = useState([])
+    console.log(seatSearch)
     useEffect(() => {
         axios.get("http://localhost:8080/test/tickets/movieId/1").then((response) => {
             setTickets(response.data)
@@ -59,24 +59,21 @@ const Seat = () => {
     tickets.map((data) => {
         dataTicketPayment.push(data.paymentStatus)
     })
-    // console.log(dataTicketPayment)
-    console.log(seatSearch);
-
-
     const [pays, setPays] = useState([])
     useEffect(() => {
         axios.post("http://localhost:8080/test/payment/create-payment/11", {
-            description: "tuan anh",
-            ticketsId: seatSearch
+            'description': "mua ve xem phim",
+            'ticketsId': seatSearch
         }).then((response) => {
             setPays(response.data);
             console.log(response.data);
         }).catch((error) => {
             console.log(error);
         })
-    }, [])
-    const navigate = useNavigate;
+    }, [seatSearch])
     console.log(pays.url)
+    const navigate = useNavigate;
+
 
     return (
 
