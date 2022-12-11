@@ -28,7 +28,6 @@ const SeatItem = ({ seatDetail, seatSold, seatSearch, setSeatSearch }) => {
 
     )
 }
-const check = [5828, 5829]
 const price = 150000;
 const dataTicketId = []
 const dataTicketFilm = []
