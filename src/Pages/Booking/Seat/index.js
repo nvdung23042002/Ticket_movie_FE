@@ -32,7 +32,7 @@ const SeatItem = ({ seatDetail, seatSold, seatSearch, setSeatSearch }) => {
 
     )
 }
-const price = 150000
+const price = 150000;
 const dataTicketId = [""]
 const dataTicketFilm = [""]
 const dataTicketPayment = [""]
@@ -62,6 +62,7 @@ const Seat = () => {
     // console.log(dataTicketPayment)
     console.log(seatSearch);
 
+
     const [pays, setPays] = useState([])
     useEffect(() => {
         axios.post("http://localhost:8080/test/payment/create-payment/11", {
@@ -74,9 +75,8 @@ const Seat = () => {
             console.log(error);
         })
     }, [])
-    const url = pays.url;
-    console.log(url)
     const navigate = useNavigate;
+    console.log(pays.url)
 
     return (
 
@@ -194,9 +194,10 @@ const Seat = () => {
                     <div className="theater">Rạp: {location.state.thea.thea}</div>
                     <div className="ticket-code">Mã vé: {seatSearch + " "}</div>
                     <div className="price-ticket">Giá vé: {price * seatSearch.length}</div>
-                    <a url={url} target="_blank" rel="noreferrer">
-                        <button className="pay"> Pay </button>
-                    </a>
+                    <button className="pay" onClick={e => {
+                        window.open(pays.url);
+                    }} > Pay </button>
+
                 </div>
             </div>
         </div>
