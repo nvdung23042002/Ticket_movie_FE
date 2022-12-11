@@ -209,12 +209,15 @@ p.text span {
 .booking-ticket-infos .movie-name {
   font-size: 1.2rem;
   margin-top: 24px;
+  display: flex;
+  justify-content: center;
 }
 
 .booking-ticket-infos .pay {
   width: 20%;
   border-radius: 10px;
 }
+
 
 
 

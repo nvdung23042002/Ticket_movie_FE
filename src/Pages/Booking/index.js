@@ -4,6 +4,8 @@ import "./style.css";
 import data from "./data";
 import { Button } from "bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import axios from "axios";
+
 
 const day = [""]
 const time = [""]
@@ -28,7 +30,7 @@ const DateItem = ({ dateDetail, dateSearch, setDateSearch }) => {
 
         </div>
         <div className="bottom">
-          {/* {dateDetail.date} */}
+          {dateDetail.date}
         </div>
       </div>
       <div className="right-side">
@@ -88,7 +90,9 @@ const CinemaItem = ({ theaDetail }) => {
   )
 }
 
+
 const Booking = () => {
+
   const [dateSearch, setDateSearch] = useState(data.date[0])
   return (
 
