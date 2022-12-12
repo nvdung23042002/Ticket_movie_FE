@@ -64,7 +64,7 @@ function MovieSelection() {
             <img src={item.image} alt="" />
           </div>
           <div className="card-bottom">
-            <h2>{item.name}</h2>
+            <h2 className='text-truncate'>{item.name}</h2>
             <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium">Buy Ticket</Button>
             <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium"
               onClick={() => navigate("movie-details", { state: item })}>Details</Button>

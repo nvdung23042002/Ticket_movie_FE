@@ -1,21 +1,17 @@
-/* body {
+body {
   background: #faf3ec;
-  font-family: "Roboto";
+  font-family: 'Roboto';
 }
 ::-webkit-input-placeholder {
-  
   color: #748194;
 }
 ::-moz-placeholder {
-  
   color: #748194;
 }
 :-ms-input-placeholder {
-  
   color: #748194;
 }
 :-moz-placeholder {
- 
   color: #748194;
 }
 .auth-page .container {
@@ -36,7 +32,7 @@
 }
 
 .c11 {
-  background-image: url("https://i.pinimg.com/736x/b8/09/22/b80922f6ea2daaf36a6627378662803b--deck-of-cards-phone-wallpapers.jpg");
+  background-image: url('https://i.pinimg.com/736x/b8/09/22/b80922f6ea2daaf36a6627378662803b--deck-of-cards-phone-wallpapers.jpg');
   background-size: 300px 400px;
   background-repeat: no-repeat;
   background-color: white;
@@ -109,7 +105,8 @@
 .c2 {
   background-color: white;
   width: 300px;
-  height: 500px;
+  max-height: 520px;
+  height: 520px;
   border-radius: 15px;
   position: absolute;
   left: 370px;
@@ -173,4 +170,4 @@ a {
 
 .s2class {
   color: #ee9ba3;
-} */
+}
