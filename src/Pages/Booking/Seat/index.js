@@ -37,10 +37,20 @@ const Seat = () => {
     const [seatSearch, setSeatSearch] = useState([])
     const [tickets, setTickets] = useState([])
     console.log(seatSearch)
+    console.log(location.state.time.showtime.toString())
     useEffect(() => {
-        axios.get("http://localhost:8080/test/tickets/movieId/1").then((response) => {
+        axios.put("http://localhost:8080/test/tickets",
+            {
+                "cinemasId": location.state.thea,
+                "roomId": 2,
+                "movieId": 1,
+                "showDate": location.state.day.day,
+                "showMonth": location.state.day.month,
+                "showTime": location.state.time.showtime
+            }
+        ).then((response) => {
             setTickets(response.data)
-            // console.log(response.data);
+            console.log(response.data);
         }).catch((error) => {
             console.log(error)
         })
@@ -68,7 +78,6 @@ const Seat = () => {
         })
     }, [seatSearch])
     console.log(pays.url)
-    const navigate = useNavigate;
 
 
     return (
@@ -184,7 +193,7 @@ const Seat = () => {
                     <h1 className="movie-name">{dataTicketFilm[dataTicketFilm.length - 1]}</h1>
                     <div className="time">Giờ: {location.state.time.showtime} </div>
                     <div className="date">Ngày tháng: {location.state.day.day + "/" + location.state.day.month + "/" + "2022"} </div>
-                    <div className="theater">Rạp: {location.state.thea.thea}</div>
+                    <div className="theater">Rạp: {location.state.theaName}</div>
                     <div className="ticket-code">Mã vé: {seatSearch + " "}</div>
                     <div className="price-ticket">Giá vé: {price * seatSearch.length}</div>
                     <button className="pay" onClick={e => {

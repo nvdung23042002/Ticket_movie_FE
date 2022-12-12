@@ -39,33 +39,92 @@ const date = [
         date: "Thu",
         day: "8"
     },
+    {
+        month: "12",
+        date: "Fri",
+        day: "9"
+    },
+    {
+        month: "12",
+        date: "Sat",
+        day: "10"
+    },
+    {
+        month: "12",
+        date: "Sun",
+        day: "11"
+    },
+    {
+        month: "12",
+        date: "Mon",
+        day: "12"
+    },
+    {
+        month: "12",
+        date: "Tue",
+        day: "13"
+    },
+    {
+        month: "12",
+        date: "Wed",
+        day: "14"
+    },
+    {
+        month: "12",
+        date: "Thu",
+        day: "15"
+    }
 
 ]
 
 const time = [
     {
-        showtime: "9:00 PM"
+        showtime: "8:00"
     },
     {
-        showtime: "10:00 PM"
+        showtime: "9:00"
     },
     {
-        showtime: "11:00 PM"
+        showtime: "10:00"
     },
     {
-        showtime: "12:00 PM"
+        showtime: "11:00"
     },
     {
-        showtime: "9:00 AM"
+        showtime: "12:00"
     },
     {
-        showtime: "10:00 AM"
+        showtime: "13:00"
     },
     {
-        showtime: "11:00 AM"
+        showtime: "14:00"
     },
     {
-        showtime: "12:00 AM"
+        showtime: "15:00"
+    },
+    {
+        showtime: "16:00"
+    },
+    {
+        showtime: "17:00"
+    },
+    {
+        showtime: "18:00"
+    },
+    {
+        showtime: "19:00"
+    },
+    {
+        showtime: "20:00"
+    },
+    {
+        showtime: "21:00"
+    },
+    {
+        showtime: "22:00"
+    },
+    {
+        showtime: "23:00"
     },
 
 
@@ -85,16 +144,20 @@ const form = [
 
 const theater = [
     {
-        thea: "CGV Aeonmall Hà Đông"
+        thea: "CGV Aeonmall Hà Đông",
+        id: 1
     },
     {
-        thea: "CGV TimesCity"
+        thea: "CGV TimesCity",
+        id: 2
     },
     {
-        thea: "CGV VinCom Bà Triệu"
+        thea: "CGV VinCom Bà Triệu",
+        id: 3
     },
     {
-        thea: "CGV Vincom Times City"
+        thea: "CGV Nguyễn Chí Thanh",
+        id: 4
     }
 
 ]
