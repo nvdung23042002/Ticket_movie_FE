@@ -212,7 +212,7 @@ const Signup = () => {
             {errors?.address && (
               <p className='error'>{errors.address.message}</p>
             )}
-            <button className='btn' type='submit'>
+            <button className='button' type='submit'>
               Sign Up
             </button>
 
