@@ -36,8 +36,6 @@ const Seat = () => {
     const location = useLocation()
     const [seatSearch, setSeatSearch] = useState([])
     const [tickets, setTickets] = useState([])
-    console.log(seatSearch)
-    console.log(location.state.time.showtime.toString())
     useEffect(() => {
         axios.put("http://localhost:8080/test/tickets",
             {
@@ -50,7 +48,6 @@ const Seat = () => {
             }
         ).then((response) => {
             setTickets(response.data)
-            console.log(response.data);
         }).catch((error) => {
             console.log(error)
         })
@@ -72,12 +69,10 @@ const Seat = () => {
             'ticketsId': seatSearch
         }).then((response) => {
             setPays(response.data);
-            console.log(response.data);
         }).catch((error) => {
             console.log(error);
         })
     }, [seatSearch])
-    console.log(pays.url)
 
 
     return (

@@ -61,8 +61,8 @@ const CinemaItem = ({ theaDetail, cinemaId }) => {
                 day: day[day.length - 1],
                 time: time[time.length - 1],
                 thea: thea[thea.length - 1],
-                theaName: theaName[theaName.length - 1]
-                // idmovie: idmovie[idmovie.length - 1]
+                theaName: theaName[theaName.length - 1],
+                idmovie: idmovie[idmovie.length - 1]
 
               }
             })
@@ -100,8 +100,7 @@ const CinemaItem = ({ theaDetail, cinemaId }) => {
 
 const Booking = () => {
   const location = useLocation()
-  // idmovie.push(location.state.id)
-  console.log(location.state.id)
+  idmovie.push(location.state.id)
   const [dateSearch, setDateSearch] = useState(data.date[0])
   return (
 
