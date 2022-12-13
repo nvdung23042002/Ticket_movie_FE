@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./style.css"
-import data from "./data";
 import { Button } from "bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useLocation } from "react-router-dom";
@@ -10,7 +9,7 @@ const SeatItem = ({ seatDetail, seatSold, seatSearch, setSeatSearch }) => {
     return (
         <button className="seat"
             style={{
-                backgroundColor: (seatSold == true) ? "fff" : (seatSearch.includes(seatDetail)) ? "#0081cb" : "#444451",
+                backgroundColor: (seatSold == true) ? "white" : (seatSearch.includes(seatDetail)) ? "#0081cb" : "#444451",
                 height: "12px",
                 width: "15px",
                 margin: "3px",
@@ -20,7 +19,16 @@ const SeatItem = ({ seatDetail, seatSold, seatSearch, setSeatSearch }) => {
             }}
             onClick={
                 e => {
-                    setSeatSearch(prevState => [...prevState, seatDetail])
+                    if (seatSearch.includes(seatDetail) == false) {
+                        setSeatSearch(prevState => [...prevState, seatDetail])
+
+                    }
+                }
+            }
+            onDoubleClick={
+                e => {
+                    setSeatSearch((seat) => seat.filter((_, index) => index !== 0));
+                    // setSeatSearch((seat) => seat.filter((_, seatDetail) => seatDetail !== e.target.value))
                 }
             }
         >
@@ -36,11 +44,19 @@ const Seat = () => {
     const location = useLocation()
     const [seatSearch, setSeatSearch] = useState([])
     const [tickets, setTickets] = useState([])
-    console.log(seatSearch)
     useEffect(() => {
-        axios.get("http://localhost:8080/test/tickets/movieId/1").then((response) => {
+        axios.put("http://w42g8.int3306.freeddns.org/test/tickets",
+            {
+                "cinemasId": location.state.thea,
+                "roomId": 1,
+                "movieId": location.state.idmovie,
+                "showDate": 14,
+                "showMonth": 12,
+                "showTime": location.state.time.showtime
+            }
+        ).then((response) => {
             setTickets(response.data)
-            // console.log(response.data);
+            console.log(response.data)
         }).catch((error) => {
             console.log(error)
         })
@@ -57,18 +73,16 @@ const Seat = () => {
     })
     const [pays, setPays] = useState([])
     useEffect(() => {
-        axios.post("http://localhost:8080/test/payment/create-payment/11", {
+        axios.post("http://w42g8.int3306.freeddns.org/test/payment/create-payment/11", {
             'description': "mua ve xem phim",
             'ticketsId': seatSearch
         }).then((response) => {
             setPays(response.data);
-            console.log(response.data);
+            console.log(response.data)
         }).catch((error) => {
             console.log(error);
         })
     }, [seatSearch])
-    console.log(pays.url)
-    const navigate = useNavigate;
 
 
     return (
@@ -96,8 +110,8 @@ const Seat = () => {
                             <div className="screen"></div>
 
                             <div className="row">
-                                <SeatItem seatDetail={dataTicketId[0]} seatSold={dataTicketPayment[0]} seatSearch={seatSearch} setSeatSearch={setSeatSearch} />
-                                <SeatItem seatDetail={dataTicketId[1]} seatSold={dataTicketPayment[1]} seatSearch={seatSearch} setSeatSearch={setSeatSearch} />
+                                <SeatItem seatDetail={dataTicketId[0]} seatSold={true} seatSearch={seatSearch} setSeatSearch={setSeatSearch} />
+                                <SeatItem seatDetail={dataTicketId[1]} seatSold={true} seatSearch={seatSearch} setSeatSearch={setSeatSearch} />
                                 <SeatItem seatDetail={dataTicketId[2]} seatSold={dataTicketPayment[2]} seatSearch={seatSearch} setSeatSearch={setSeatSearch} />
                                 <SeatItem seatDetail={dataTicketId[3]} seatSold={dataTicketPayment[3]} seatSearch={seatSearch} setSeatSearch={setSeatSearch} />
                                 <SeatItem seatDetail={dataTicketId[4]} seatSold={dataTicketPayment[4]} seatSearch={seatSearch} setSeatSearch={setSeatSearch} />
@@ -184,7 +198,7 @@ const Seat = () => {
                     <h1 className="movie-name">{dataTicketFilm[dataTicketFilm.length - 1]}</h1>
                     <div className="time">Giờ: {location.state.time.showtime} </div>
                     <div className="date">Ngày tháng: {location.state.day.day + "/" + location.state.day.month + "/" + "2022"} </div>
-                    <div className="theater">Rạp: {location.state.thea.thea}</div>
+                    <div className="theater">Rạp: {location.state.theaName}</div>
                     <div className="ticket-code">Mã vé: {seatSearch + " "}</div>
                     <div className="price-ticket">Giá vé: {price * seatSearch.length}</div>
                     <button className="pay" onClick={e => {
@@ -198,4 +212,4 @@ const Seat = () => {
     )
 }
 
-export default Seat;    
+export default Seat;  
