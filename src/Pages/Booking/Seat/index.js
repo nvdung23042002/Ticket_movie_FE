@@ -44,7 +44,6 @@ const Seat = () => {
     const location = useLocation()
     const [seatSearch, setSeatSearch] = useState([])
     const [tickets, setTickets] = useState([])
-    location.state.day
     useEffect(() => {
         axios.put("http://w42g8.int3306.freeddns.org/test/tickets",
             {

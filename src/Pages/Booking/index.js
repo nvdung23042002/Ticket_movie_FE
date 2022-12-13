@@ -44,7 +44,6 @@ const DateItem = ({ dateDetail, dateSearch, setDateSearch }) => {
 }
 
 const CinemaItem = ({ theaDetail, cinemaId }) => {
-
   const CategoryView = () => {
 
     const TimeItem = ({ timeDetail }) => {
