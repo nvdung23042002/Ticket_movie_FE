@@ -16,15 +16,15 @@ export default function () {
             setFilm(res.data)
         }).catch(error => {
             console.log(error);
-        }) 
+        })
     }
     const deleteFilm = (filmID) => {
-            FilmServices.deleteFilm(filmID).then((res) => {
+        FilmServices.deleteFilm(filmID).then((res) => {
             getAllFilms()
         }).catch(error => {
-            console.log(error); 
-        }) 
-    } 
+            console.log(error);
+        })
+    }
     useEffect(() => {
         getAllFilms()
     }, [])
@@ -32,7 +32,7 @@ export default function () {
         <div className={componentName}>
             <div className="add-film">
                 <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
-                onClick={() => navigate("/admin/add-film")}>Add Film</Button>
+                    onClick={() => navigate("/admin/add-film")}>Add Film</Button>
             </div>
             <h2 className="text-center">Film List</h2>
             <div className="row">
@@ -42,7 +42,9 @@ export default function () {
                         <tr>
                             <th>ID</th>
                             <th>name</th>
+                            <th>Total Revenue</th>
                             <th>Action</th>
+
                         </tr>
                     </thead>
 
@@ -53,11 +55,12 @@ export default function () {
                                     <tr key={item.id}>
                                         <td>{item.id}</td>
                                         <td>{item.name}</td>
+                                        <td>{}</td>
                                         <td>
                                             <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
-                                            onClick={(e) => deleteFilm(item.id)}>Delete</Button>
-                                            <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
-                                            onClick={() => navigate('/admin/edit-film/${item.id}', {state: item})}>Edit</Button>
+                                                onClick={(e) => deleteFilm(item.id)}>Delete</Button>
+                                            <Button type="button" buttonStyle="btn--danger--solid" buttonSize="btn--small"
+                                                onClick={() => navigate('/admin/edit-film/${item.id}', { state: item })}>Edit</Button>
                                         </td>
                                     </tr>
                             )
