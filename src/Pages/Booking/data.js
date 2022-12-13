@@ -160,43 +160,19 @@ const time = [
         showtime: "9:00"
     },
     {
-        showtime: "10:00"
-    },
-    {
-        showtime: "11:00"
-    },
-    {
         showtime: "12:00"
-    },
-    {
-        showtime: "13:00"
     },
     {
         showtime: "14:00"
     },
     {
-        showtime: "15:00"
-    },
-    {
-        showtime: "16:00"
-    },
-    {
         showtime: "17:00"
-    },
-    {
-        showtime: "18:00"
     },
     {
         showtime: "19:00"
     },
     {
-        showtime: "20:00"
-    },
-    {
         showtime: "21:00"
-    },
-    {
-        showtime: "22:00"
     },
     {
         showtime: "23:00"
@@ -205,17 +181,7 @@ const time = [
 
 ]
 
-const form = [
-    {
-        cate: "2D Phụ đề Việt"
-    },
-    {
-        cate: "IMAX2D phụ đề Việt"
-    },
-    {
-        cate: "4D2D phụ đề Việt"
-    }
-]
+
 
 const theater = [
     {
@@ -241,7 +207,6 @@ const theater = [
 
 const data = {
     date,
-    form,
     time,
     theater
 }

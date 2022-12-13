@@ -13,7 +13,7 @@ import AddFilm from "./Pages/Admin/FilmManagement/AddFilm"
 const routes = [
   {
     path: "/booking",
-    element: <Authentication><Layout component={Booking} /></Authentication>,
+    element: <Layout component={Booking} />,
   },
   {
     path: "/payment",
@@ -57,6 +57,6 @@ const routes = [
     element: <Login />,
     label: "Login"
   }
-    
+
 ];
 export default routes;

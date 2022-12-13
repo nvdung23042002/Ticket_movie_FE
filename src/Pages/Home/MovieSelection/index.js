@@ -65,8 +65,14 @@ function MovieSelection() {
           </div>
           <div className="card-bottom">
             <h2 className='text-truncate'>{item.name}</h2>
-            <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small">Buy Ticket</Button>
+
+            <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium">Buy Ticket</Button>
+            <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium"
+
             <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
+              onClick={() => navigate("booking", { state: item })}>Buy Ticket</Button>
+            <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
+
               onClick={() => navigate("movie-details", { state: item })}>Details</Button>
           </div>
         </div>

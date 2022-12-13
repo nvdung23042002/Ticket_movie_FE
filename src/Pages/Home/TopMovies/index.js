@@ -77,6 +77,7 @@ function HeroList() {
                 type='button'
                 buttonStyle='btn--primary--outline'
                 buttonSize='btn--medium'
+                onClick={() => navigate("booking", { state: item })}
               >
                 Buy Ticket
               </Button>
