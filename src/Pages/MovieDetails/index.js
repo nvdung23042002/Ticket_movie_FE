@@ -32,19 +32,19 @@ export default function () {
                 </li>
                 <li className="movie-details-info">
                   <label>Thể loại:</label>
-                  <span></span>
+                  <span>{location.state.category}</span>
                 </li>
                 <li className="movie-details-info">
                   <label>Khởi chiếu:</label>
-                  <span></span>
+                  <span>{location.state.debut}</span>
                 </li>
                 <li className="movie-details-info">
                   <label>Thời lượng:</label>
-                  <span></span>
+                  <span>{location.state.movieDuration}</span>
                 </li>
                 <li className="movie-details-info">
                   <label>Ngôn ngữ:</label>
-                  <span></span>
+                  <span>{location.state.language}</span>
                 </li>
                 <li className="movie-details-info">
                   <label>Rated:</label>

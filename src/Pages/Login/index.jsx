@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import './login.css';
 import { useNavigate } from 'react-router-dom';
-
+import { Button } from '../../Utils/Button/Button';
 const Login = () => {
   const navigate = useNavigate();
   const methods = useForm({
@@ -114,9 +114,13 @@ const Login = () => {
             {errors?.password && (
               <p className='error'>{errors.password.message}</p>
             )}
-            <button className='button' type='submit'>
+
+            {/* <button className='button' type='submit'>
               Sign In
-            </button>
+            </button> */}
+            <div className="button-signin">
+              <Button buttonStyle="btn--primary--solid" buttonSize="btn--medium" type="submit">Sign In</Button>
+            </div>
 
             <br />
             <br />

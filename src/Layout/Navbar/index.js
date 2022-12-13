@@ -27,7 +27,7 @@ export default function () {
             </Link>
           </button>
         ) : (
-          <Link to='/login' className={'menu-item'}>
+          <Link to='/login' className={'menu-item'} id = "authen1">
             Login
           </Link>
         )}

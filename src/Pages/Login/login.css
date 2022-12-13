@@ -124,9 +124,9 @@ body {
   color: #748194;
   font-size: 14px;
 }
-.button {
+/* .button {
   font-weight: bold;
-  width: 230px;
+  width: 100px;
   margin: 0 35px 20px;
   height: 45px;
   padding: 6px 15px;
@@ -136,6 +136,10 @@ body {
   background: #ee9ba3;
   color: white;
   font-size: 14px;
+} */
+.button-signin {
+  padding: 6px 15px;
+  margin-left: 20px;
 }
 .signup1 {
   color: #748194;
