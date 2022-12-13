@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { Button } from "../../../Utils/Button/Button";
 import { useState } from "react";
 import { useEffect } from "react";
-import axios from "axios";
+import FilmServices from "../../../services/FilmServices";
 import { useNavigate } from "react-router-dom";
 
 function MovieSelection() {
@@ -43,21 +43,19 @@ function MovieSelection() {
   };
 
   const [data, setData] = useState([]);
+  const navigate = useNavigate()
+
   const getAllData = () => {
-    axios
-      .get("http://localhost:8080/test/movies")
-      .then((response) => {
-        console.log(response.data);
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    FilmServices.getFilm().then((res) => {
+      setData(res.data)
+    }).catch(error => {
+      console.log(error);
+    })
   };
+
   useEffect(() => {
     getAllData();
   }, []);
-  const navigate = useNavigate()
   return (
     <Slider {...settings}>
       {data.map((item) => (
@@ -66,10 +64,8 @@ function MovieSelection() {
             <img src={item.image} alt="" />
           </div>
           <div className="card-bottom">
-            <h2>{item.name}</h2>
-            <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium"
-              onClick={() => navigate("booking", { state: item })}
-            >Buy Ticket</Button>
+            <h2 className='text-truncate'>{item.name}</h2>
+            <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium">Buy Ticket</Button>
             <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--medium"
               onClick={() => navigate("movie-details", { state: item })}>Details</Button>
           </div>

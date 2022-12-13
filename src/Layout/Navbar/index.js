@@ -1,23 +1,36 @@
-import "./style.css";
-import routes from "../../routes.config.js";
-import { Link } from "react-router-dom";
-import {RiCloseLine} from 'react-icons/ri'
-import {AiOutlineBars} from 'react-icons/ai'
-import {BiMoviePlay} from 'react-icons/bi'
+import { BiMoviePlay } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
+import routes from '../../routes.config.js';
+import './style.css';
 
-const componentName = "Navbar";
+const componentName = 'Navbar';
 export default function () {
+  const token = localStorage.getItem('token');
   return (
     <div className={componentName}>
-      <div className="logo">
+      <div className='logo'>
         <BiMoviePlay></BiMoviePlay>
       </div>
-      <div className="nav-link">
-        {routes.map((r) => (
-          <Link to={r.path} className={"menu-item"}>
-            {r.label}
+      <div className='nav-link'>
+        <Link to='/' className={'menu-item'}>
+          Home
+        </Link>
+        {token ? (
+          <button
+            style={{ backgroundColor: 'transparent', border: 'none' }}
+            onClick={() => {
+              localStorage.removeItem('token');
+            }}
+          >
+            <Link to='/login' className={'menu-item'}>
+              Logout
+            </Link>
+          </button>
+        ) : (
+          <Link to='/login' className={'menu-item'}>
+            Login
           </Link>
-        ))}
+        )}
       </div>
     </div>
   );
