@@ -154,7 +154,7 @@ const date = [
 
 const time = [
     {
-        showtime: "8:00"
+        showtime: "7:00"
     },
     {
         showtime: "9:00"

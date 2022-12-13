@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {useLocation} from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import { Button } from "../../Utils/Button/Button";
 import "./Style.css"
 import ReactPlayer from 'react-player'
@@ -8,6 +8,7 @@ const componentName = "MovieDetails";
 
 export default function () {
   const location = useLocation();
+  const navigate = useNavigate()
   const [showDes, setShowDes] = useState(false)
   const [showTrailer, setShowTrailer] = useState(false)
   return (
@@ -58,7 +59,8 @@ export default function () {
 
               <div className="movie-details-options">
                 <div className="buy-ticket">
-                  <Button>BuyTicket</Button>
+                  <Button
+                  onClick={() => navigate("/booking", { state: location.state })}>BuyTicket</Button>
                 </div>
                 <div className="description">
                  
