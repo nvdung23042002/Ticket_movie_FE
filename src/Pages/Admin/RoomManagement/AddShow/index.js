@@ -4,7 +4,6 @@ import "./style.css"
 import { Button } from "../../../../Utils/Button/Button"
 import { ImCancelCircle } from 'react-icons/im'
 import TicketServices from "../../../../services/TicketServices"
-import axios from "axios"
 export default function ({ closeModal }) {
     const location = useLocation();
     const navigate = useNavigate()
