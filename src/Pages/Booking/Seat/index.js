@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 const SeatItem = ({ seatDetail, seatSold, seatSearch, setSeatSearch }) => {
-
     return (
         <button className="seat"
             style={{
@@ -22,12 +21,14 @@ const SeatItem = ({ seatDetail, seatSold, seatSearch, setSeatSearch }) => {
                 e => {
                     if (seatSearch.includes(seatDetail) == false) {
                         setSeatSearch(prevState => [...prevState, seatDetail])
+
                     }
                 }
             }
             onDoubleClick={
                 e => {
                     setSeatSearch((seat) => seat.filter((_, index) => index !== 0));
+                    // setSeatSearch((seat) => seat.filter((_, seatDetail) => seatDetail !== e.target.value))
                 }
             }
         >
@@ -39,19 +40,19 @@ const price = 150000;
 const dataTicketId = []
 const dataTicketFilm = []
 const dataTicketPayment = []
-const handleClick = []
 const Seat = () => {
     const location = useLocation()
     const [seatSearch, setSeatSearch] = useState([])
     const [tickets, setTickets] = useState([])
+    location.state.day
     useEffect(() => {
-        axios.put("http://localhost:8080/test/tickets",
+        axios.put("http://w42g8.int3306.freeddns.org/test/tickets",
             {
                 "cinemasId": location.state.thea,
-                "roomId": 2,
+                "roomId": 1,
                 "movieId": location.state.idmovie,
-                "showDate": location.state.day.day,
-                "showMonth": location.state.day.month,
+                "showDate": 14,
+                "showMonth": 12,
                 "showTime": location.state.time.showtime
             }
         ).then((response) => {
@@ -73,7 +74,7 @@ const Seat = () => {
     })
     const [pays, setPays] = useState([])
     useEffect(() => {
-        axios.post("http://localhost:8080/test/payment/create-payment/11", {
+        axios.post("http://w42g8.int3306.freeddns.org/test/payment/create-payment/11", {
             'description': "mua ve xem phim",
             'ticketsId': seatSearch
         }).then((response) => {

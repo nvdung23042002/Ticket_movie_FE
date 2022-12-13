@@ -66,7 +66,6 @@ const CinemaItem = ({ theaDetail, cinemaId }) => {
 
               }
             })
-
           }}
         >
           {timeDetail.showtime}
