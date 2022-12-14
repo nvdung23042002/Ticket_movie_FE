@@ -26,19 +26,20 @@ const Login = () => {
   const handleLogin = async (loginData) => {
     try {
       const { data } = await axios.post(
-        'http://w42g8.int3306.freeddns.org/api/v1/auth/signin',
+        'http://w42g8.int3306.freeddns.org/test/v1/auth/signin',
         loginData
       );
       localStorage.setItem('token', data.accessToken);
       if (data.roles[0] === 'ROLE_ADMIN') {
         navigate('/admin');
       } else {
-        navigate('/');
+        navigate('/',{state: {id: data.id}});
       }
     } catch (error) {
       console.log(error);
     }
   };
+  console.log(localStorage);
 
   return (
     <div className='auth-page'>

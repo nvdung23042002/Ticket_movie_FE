@@ -70,10 +70,9 @@ const Seat = () => {
     tickets.map((data) => {
         dataTicketPayment.push(data.paymentStatus)
     })
-
     const [pays, setPays] = useState([])
     useEffect(() => {
-        axios.post("http://w42g8.int3306.freeddns.org/test/payment/create-payment/11", {
+        axios.post("http://w42g8.int3306.freeddns.org/test/payment/create-payment" + location.state.id, {
             'description': "mua ve xem phim",
             'ticketsId': seatSearch
         }).then((response) => {

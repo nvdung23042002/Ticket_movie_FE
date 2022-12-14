@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const USER_API_BASE_URL = "http://w42g8.int3306.freeddns.org/api/v1/auth"
+const USER_API_BASE_URL = "http://w42g8.int3306.freeddns.org/test/v1/auth"
 
 class UserServices {
     getUser() {

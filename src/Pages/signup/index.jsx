@@ -33,7 +33,7 @@ const Signup = () => {
   const handleSignup = async (signupData) => {
     try {
       await axios.post(
-        'http://w42g8.int3306.freeddns.org/api/v1/auth/signup',
+        'http://w42g8.int3306.freeddns.org/test/v1/auth/signup',
         signupData
       );
       navigate('/login');
