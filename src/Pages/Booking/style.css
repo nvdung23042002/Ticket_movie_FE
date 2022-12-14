@@ -33,7 +33,7 @@
 
 .category-view-wrapper .time-wrapper .time-detail{
     font-size: 17px;
-    border: 2px solid rgba(0, 0, 0, 0.35);
+    /* border: 2px solid rgba(0, 0, 0, 0.35); */
     min-width: 100px; 
     padding: 5px 5px;
     border-radius: 5px;

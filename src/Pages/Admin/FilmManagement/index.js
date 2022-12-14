@@ -43,6 +43,7 @@ export default function () {
                             <th>ID</th>
                             <th>name</th>
                             <th>Total Revenue</th>
+                            <th>Total Ticket</th>
                             <th>Action</th>
 
                         </tr>
@@ -55,7 +56,8 @@ export default function () {
                                     <tr key={item.id}>
                                         <td>{item.id}</td>
                                         <td>{item.name}</td>
-                                        <td>{}</td>
+                                        <td>{item.sumPriceAudit}</td>
+                                        <td>{item.sumTicketAudit}</td>
                                         <td>
                                             <Button type="button" buttonStyle="btn--primary--solid" buttonSize="btn--small"
                                                 onClick={(e) => deleteFilm(item.id)}>Delete</Button>

@@ -12,9 +12,7 @@ export default function () {
         <BiMoviePlay></BiMoviePlay>
       </div>
       <div className='nav-link'>
-        <Link to='/' className={'menu-item'} >
-          Home
-        </Link>
+        
         {token ? (
           <button
             style={{ backgroundColor: 'transparent', border: 'none' }}

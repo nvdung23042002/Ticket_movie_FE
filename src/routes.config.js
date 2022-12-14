@@ -10,10 +10,11 @@ import Authentication from "./guards/Authen";
 import Signup from "./Pages/signup";
 import Admin from "./Pages/Admin";
 import AddFilm from "./Pages/Admin/FilmManagement/AddFilm"
+import LayoutAdmin from "./LayoutAdmin";
 const routes = [
   {
     path: "/booking",
-    element: <Layout component={Booking} />,
+    element:<Authentication><Layout component={Booking} /></Authentication> ,
   },
   {
     path: "/payment",
@@ -37,15 +38,15 @@ const routes = [
   },
   {
     path: "/admin",
-    element: <Layout component={Admin} />
+    element: <LayoutAdmin component={Admin} />
   },
   {
     path: "/admin/add-film",
-    element: <Layout component={AddFilm} />
+    element: <LayoutAdmin component={AddFilm} />
   },
   {
     path: "/admin/edit-film/:id",
-    element: <Layout component={AddFilm} />
+    element: <LayoutAdmin component={AddFilm} />
   },
   {
     path: "/",
